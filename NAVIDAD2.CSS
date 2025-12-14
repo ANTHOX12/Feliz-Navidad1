@@ -1,0 +1,129 @@
+:root {
+  --bg1: #061b2b;
+  --bg2: #0b2b1d;
+  --text: #ffffff;
+  --card: rgba(255,255,255,0.1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text);
+  background: linear-gradient(145deg, var(--bg1), var(--bg2));
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+body.night {
+  --bg1: #020814;
+  --bg2: #091428;
+}
+
+#snow {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+}
+
+header {
+  text-align: center;
+  padding: 30px 15px;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+
+.card {
+  background: var(--card);
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+}
+
+.countdown {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.countdown div {
+  background: rgba(0,0,0,0.2);
+  padding: 15px;
+  border-radius: 12px;
+}
+
+.countdown span {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.countdown small {
+  display: block;
+  opacity: 0.8;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+button {
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  opacity: 0.85;
+}
+
+.toast {
+  margin-top: 15px;
+  display: none;
+}
+
+.toast.show {
+  display: block;
+}
+
+.lights {
+  padding: 0 20px;
+}
+
+.wire {
+  height: 20px;
+  border-top: 3px solid rgba(255,255,255,0.3);
+  position: relative;
+}
+
+.bulb {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  position: absolute;
+  top: -7px;
+  animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+  0%,100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  opacity: 0.7;
+}
